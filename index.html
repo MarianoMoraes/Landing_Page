@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&family=Sofia+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Landing Page Final</title>
+  </head>
+  <body>
+    <section class="layout">
+      <div class="header">
+        <img src="img/SAITA2m.png" alt="logo_saita" />
+        <h1>Saita Diving</h1>
+        <img src="img/FECDAS2m.png" alt="logo_fecdas" />
+      </div>
+      <div class="galeria">
+        <section>
+          <img class="gal" src="img/reduced/buceo7.webp" alt="b3" />
+          <img class="gal" src="img/reduced/buceo4.webp" alt="b4" />
+          <img class="gal" src="img/reduced/buceo5.webp" alt="b5" />
+          <img class="gal" src="img/reduced/buceo6.webp" alt="b6" />
+        </section>
+      </div>
+      <div class="formulario">
+        <form action="form.php" method="post" validate>
+          <label for="Nombre">Nombre</label>
+          <input
+            type="text"
+            id="Nombre"
+            name="Nombre"
+            maxlength="20"
+            required=""
+            placeholder="Nombre"
+          />
+          <label for="Apellido">Primer Apellido</label>
+          <input
+            type="text"
+            id="Apellido"
+            name="Apellido"
+            maxlength="20"
+            required=""
+            placeholder="Primer apellido"
+          />
+          <label for="Segundo_apellido">Segundo Apellido</label>
+          <input
+            type="text"
+            id="Segundo_apellido"
+            name="Segundo_apellido"
+            maxlength="20"
+            required=""
+            placeholder="Segundo apellido"
+          />
+
+          <label for="Email">Email</label>
+          <input
+            type="email"
+            id="Email"
+            name="Email"
+            required=""
+            placeholder="name@mail"
+          />
+
+          <label for="codPostal">Código postal</label>
+          <input
+            type="text"
+            id="codPostal"
+            name="codPostal"
+            maxlength="20"
+            required=""
+            placeholder="Código postal"
+          />
+
+          <label for="Phone">Teléfono</label>
+          <input
+            type="text"
+            id="Phone"
+            name="Phone"
+            pattern="[0-9]{9}"
+            required=""
+            placeholder="000000000"
+          />
+          <div class="button">
+            <button type="submit">Quiero Bucear Ahora!</button>
+          </div>
+        </form>
+      </div>
+      <div class="footer_left">
+        <a href=""><img src="img/mail.png" alt="logo_mail"  /></a>
+        <a href="https://www.instagram.com/saitadiving/"
+          ><img src="img/instagram.png" alt="logo_twitter"
+        /></a>
+        <a href="#"><img src="img/whatsapp.png" alt="logo_whatsapp" /></a>
+      </div>
+      <div class="footer_right">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.280664575366!2d2.223297566349483!3d41.411425735938835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a351e7b73b23%3A0x89b3dcdfedfd8971!2sSaita%20Diving%20Club%20Barcelona!5e0!3m2!1ses!2ses!4v1673866780589!5m2!1ses!2ses"
+          width="900"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+  </body>
+</html>

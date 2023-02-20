@@ -1,0 +1,238 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* background de la página simulando el color del mar a diferente profundidad */
+body {
+  background: -webkit-linear-gradient(
+      rgba(0, 212, 255, 1) 0%,
+      rgba(48, 48, 143, 1) 31%,
+      rgba(2, 0, 36, 1) 100%
+    )
+    fixed;
+}
+
+/* página basad en grid areas */
+
+/* grid area para mas de 768px */
+.layout {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid:
+    "header header header header" 0.3fr
+    "galeria galeria formulario formulario" 1fr
+    "footer_left footer_left footer_right footer_right" 0.3fr
+    / 1fr 1fr 1fr 1fr;
+  gap: 0px;
+}
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.galeria {
+  grid-area: galeria;
+  display: grid;
+  place-content: center;
+}
+.formulario {
+  grid-area: formulario;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.footer_left {
+  grid-area: footer_left;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.footer_right {
+  margin-bottom: 10px;
+  grid-area: footer_right;
+  display: grid;
+  place-content: center;
+}
+
+/* media query para máximo 768px y reordenamiento de areas*/
+@media (max-width: 768px) {
+  .layout {
+    grid:
+      "header header" 0.3fr
+      "galeria galeria" 1fr
+      "formulario formulario" 0.6fr
+      "footer_left footer_right" 0.3fr
+      / 1fr 1fr;
+  }
+  .galeria {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+/* media query para máximo 576px y reordenamiento de areas*/
+@media (max-width: 576px) {
+  .layout {
+    grid:
+      "header" auto
+      "galeria" 0.8fr
+      "formulario" 0.8fr
+      "footer_right" 0.3fr
+      "footer_left" 0.1fr
+      / 1fr;
+  }
+
+  div.formulario form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-top: 0;
+  }
+  .footer_left {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .galeria {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+  .footer_right iframe {
+    margin-top: 60px;
+  }
+  .galeria section img.gal:hover {
+    width: 120px;
+    opacity: 1;
+    filter: contrast(120%);
+    max-height: 500px;
+    
+  }
+  div.header img {
+    width: 20%;
+  }
+}
+/* Fin de los media query */
+
+.header img {
+  width: 14%;
+  height: auto;
+}
+
+.header h1 {
+  font-size: calc(7vw + 1vh);
+  color: var(--headercolor);
+}
+/* import de font family sofia */
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Sofia&family=Sofia+Sans+Semi+Condensed:ital,wght@0,1;0,100;0,200;0,300;0,400;0,500;1,1;1,100;1,200;1,300;1,400&display=swap");
+
+div.galeria {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 1em;
+}
+
+section {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  height: 430px;
+}
+
+section img.gal {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: 0.5s ease;
+  
+}
+
+section img.gal:hover {
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+  max-height: 500px;
+}
+
+div.formulario form {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 150px; */
+  width: 90%;
+  font-size: bolder;
+  /* background: linear-gradient(
+    rgba(241, 219, 13, 0.452),
+    rgb(21, 21, 97)
+  ); */
+  color: var(--formcolor);
+}
+
+label {
+  font-size: larger;
+}
+
+input {
+  padding: 7px;
+  margin-bottom: 5px;
+  filter: opacity(0.5);
+  color: var(--inputcolor);
+  font-weight: 900;
+}
+.formulario button {
+  background-color: var(--formbtnback);
+  color: solid var(--inputcolor);
+  font-size: 15px;
+  margin-top: 15px;
+  font-weight: bolder;
+  padding: 10px;
+  font-family: var(--fontfant);
+  font-size: 1.4rem;
+  border-bottom: 8px solid var(--inputcolor);
+  filter: opacity(0.85);
+}
+
+.button {
+  display: grid;
+  place-content: center;
+}
+
+button:hover {
+  background-color: var(--headercolor);
+}
+
+.footer_left img {
+  width: 50px;
+  height: 50px;
+  filter: opacity(.8);
+  filter: invert();
+}
+
+.footer_right iframe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: 150px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+

@@ -1,0 +1,14 @@
+:root {
+  /* colores */
+
+  --headercolor: rgb(255, 255, 255, 0.5);
+  --formcolor: whitesmoke;
+  --inputcolor: black;
+  --formbtnback: rgb(14, 35, 153);
+
+  /* tipografia */
+
+ 
+
+  --fontfant: "Sofia", cursive;
+}
